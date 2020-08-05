@@ -37,8 +37,6 @@ router.post('/',
         const {email, password} = req.body
         try {
             let user = await User.findOne({email})
-            console.log(bcrypt)
-
             if (!user) {
                 return res.status(400).json({msg: 'invalid credentials'})
             }
